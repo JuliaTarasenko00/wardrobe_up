@@ -1,68 +1,89 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import url('./styles/fonts.css');
+@import url('./styles/utils.css');
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+html {
+  scroll-behavior: smooth;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-a:hover {
-  color: #535bf2;
+
+:where(ul, ol) {
+  list-style: none;
+}
+
+:where(h1, h2, h3, h4, h5, h6, p) {
+  font-weight: inherit;
+  line-height: 1.4;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--color-bg-main);
+  color: var(--color-primary);
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+  font-family: 'Montserrat', sans-serif;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  background: none;
+  border: none;
+  outline: none;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+img {
+  display: block;
+  max-inline-size: 100%;
+  block-size: auto;
+  object-fit: cover;
+}
+
+svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+input {
+  font-family: 'Montserrat', sans-serif;
+  outline: none;
+}
+
+.container {
+  position: relative;
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 2vw, 4rem);
+  max-inline-size: clamp(320px, 90vw, 1440px);
+}
+
+@media screen and (min-width: 430px) {
+  .container {
+    max-inline-size: 430px;
   }
-  a:hover {
-    color: #747bff;
+}
+
+@media screen and (min-width: 740px) {
+  .container {
+    max-inline-size: 750px;
+    padding-inline: 20px;
   }
-  button {
-    background-color: #f9f9f9;
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    max-inline-size: 1024px;
+    padding-inline: 30px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    max-inline-size: 1440px;
+    padding-inline: 70px;
   }
 }
