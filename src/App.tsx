@@ -1,5 +1,6 @@
 import { lazy, Suspense } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { route } from './components/helpers/routes';
 
 const Layout = lazy(() => import('./components/Layout/Layout'));
 
@@ -8,7 +9,7 @@ const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: route.home,
     Component: Layout,
     children: [{ index: true, Component: HomePage }],
   },

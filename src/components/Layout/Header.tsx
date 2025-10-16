@@ -1,14 +1,8 @@
-import { useEffect, useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { HiOutlineMenu } from 'react-icons/hi';
-import {
-  IoBagHandleOutline,
-  IoCloseOutline,
-  IoHeartOutline,
-  IoPersonOutline,
-  IoSearchOutline,
-} from 'react-icons/io5';
-import logo from '../../assets/img/logo.png';
+import { IoSearchOutline } from 'react-icons/io5';
+import { route } from '../helpers/routes';
 import './styles/header.css';
 
 type FormValues = {
@@ -16,8 +10,6 @@ type FormValues = {
 };
 
 export const Header = () => {
-  const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false);
-
   const {
     register,
     handleSubmit,
@@ -31,70 +23,45 @@ export const Header = () => {
     console.log('value: ', value);
   };
 
-  useEffect(() => {
-    const media: MediaQueryList = window.matchMedia('(min-width: 740px)');
-    const handler = () => setIsSearchOpen(false);
-    media.addEventListener('change', handler);
-    return () => media.removeEventListener('change', handler);
-  }, []);
-
   return (
     <header className="site-header">
-      <div className="container site-header__container">
-        <button type="button" className="open-menu">
-          <HiOutlineMenu />
-        </button>
-        <button
-          type="button"
-          className="search-mobile-only"
-          onClick={() => setIsSearchOpen((prev) => !prev)}
-        >
-          {isSearchOpen ? <IoCloseOutline /> : <IoSearchOutline />}
-        </button>
-        <div className="site-header__logo-search">
-          {!isSearchOpen && (
-            <img
-              src={logo}
-              alt="logo wardrobe"
-              width={314}
-              height={80}
-              className="site-header__logo"
-            />
-          )}
-
+      <div className=" container site-header__container">
+        <div className="site_header__wrapper">
+          <button type="button" className="btn__open_menu">
+            <HiOutlineMenu />
+          </button>
+          <Link to={route.home} className="site-logo">
+            WardrobeUp
+          </Link>
+        </div>
+        <div className="site-header__wrapper-nav">
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className={`site-header__search-form ${
-              isSearchOpen ? 'active' : ''
-            }`}
+            className="site-header__search-form"
           >
             <input
               type="text"
               placeholder="Search products…"
-              className="site-header__search-input"
-              {...register('name_product', { required: 'true' })}
+              className="search-form__input"
+              {...register('name_product')}
             />
             <button
               type="submit"
               disabled={!isDirty}
-              className="site-header__search-button"
+              className="search-form__btn-submit"
             >
               <IoSearchOutline />
             </button>
           </form>
+          <nav className="site-header__nav">
+            <NavLink to="/" className="nav__auth">
+              LogIn
+            </NavLink>
+            <NavLink to="/" className="nav__bag">
+              Shopping bag [0]
+            </NavLink>
+          </nav>
         </div>
-
-        <nav className="site-header__navigation">
-          <button type="button" className="navigation-authentication">
-            <IoPersonOutline />
-          </button>
-          <button type="button" className="navigation-favorite">
-            <IoHeartOutline />
-          </button>
-          <button type="button" className="navigation-bag">
-            <IoBagHandleOutline />
-          </button>
-        </nav>
       </div>
     </header>
   );

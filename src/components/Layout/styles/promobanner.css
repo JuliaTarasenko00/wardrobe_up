@@ -1,8 +1,8 @@
 .promo-banner {
-  background-color: black;
+  background-color: var(--color-bg-black);
 
   .promo-banner__container {
-    padding-inline: 30px;
+    padding-inline: 22px;
     padding-block: 6px;
     display: flex;
     align-items: center;
@@ -28,16 +28,16 @@
 
     &:hover,
     &:focus {
-      color: var(--color-accent-terra);
+      color: var(--color-accent-blue);
     }
   }
 }
 
 .promo-banner__text {
+  font-family: 'PlayfairDisplay', sans-serif;
   margin-left: auto;
   color: var(--color-white);
-  font-weight: 400;
-  font-size: 8px;
+  font-size: 14px;
   line-height: 1.5;
   text-align: center;
 }

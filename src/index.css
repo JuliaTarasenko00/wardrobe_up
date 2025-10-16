@@ -23,17 +23,21 @@ html {
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-family);
   background-color: var(--color-bg-main);
   color: var(--color-primary);
 }
 
 button {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-family);
   cursor: pointer;
   background: none;
   border: none;
   outline: none;
+}
+
+a {
+  text-decoration: none;
 }
 
 img {
@@ -50,7 +54,7 @@ svg {
 }
 
 input {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-family);
   outline: none;
 }
 
@@ -83,7 +87,7 @@ input {
 
 @media screen and (min-width: 1440px) {
   .container {
-    max-inline-size: 1440px;
-    padding-inline: 70px;
+    max-width: 1440px;
+    padding-inline: 60px;
   }
 }

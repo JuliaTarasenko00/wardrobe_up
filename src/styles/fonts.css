@@ -1,3 +1,5 @@
+/*------------Montserrat---------- */
+
 @font-face {
   font-family: 'Montserrat';
   src: url('/src/assets/fonts/Montserrat-Light.ttf') format('truetype');
@@ -18,6 +20,40 @@
   font-family: 'Montserrat';
   src: url('/src/assets/fonts/Montserrat-Medium.ttf') format('truetype');
   font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/src/assets/fonts/Montserrat-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/*------------PlayfairDisplay---------- */
+
+@font-face {
+  font-family: 'PlayfairDisplay';
+  src: url('/src/assets/fonts/PlayfairDisplay-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PlayfairDisplay';
+  src: url('/src/assets/fonts/PlayfairDisplay-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PlayfairDisplay';
+  src: url('/src/assets/fonts/PlayfairDisplay-Bold.ttf') format('truetype');
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
