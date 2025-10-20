@@ -2,6 +2,7 @@ import { Suspense } from 'react';
 import { PromoBanner } from './PromoBanner';
 import { Outlet } from 'react-router-dom';
 import { Header } from './Header';
+import { Footer } from '../FooterComponent/FooterComponent';
 
 export default function Layout() {
   return (
@@ -17,7 +18,7 @@ export default function Layout() {
           </Suspense>
         }
       </main>
-      <footer></footer>
+      <Footer />
     </>
   );
 }

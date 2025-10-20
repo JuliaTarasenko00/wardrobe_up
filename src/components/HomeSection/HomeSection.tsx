@@ -47,7 +47,7 @@ export const HomeSection = () => {
             initial={{ opacity: 0.8 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0.9 }}
-            transition={{ duration: 0.6, ease: 'easeIn' }}
+            transition={{ duration: 0.6 }}
             className="hero__wrapper"
           >
             <div className="hero__img">
